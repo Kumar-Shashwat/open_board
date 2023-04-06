@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Open Board</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="icons/favicon.ico" class="rel">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="CSS/style.css"> <!-- isko hamesh last me likhan kunki ye wala sablko override karega.-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class = "option-cont">
+            <span class="material-symbols-outlined option-icon hamburger-icon ">
+                menu
+            </span>
+
+        </div>
+
+        <div class="tool-cont scale-tool">
+            <img src="icons/pencil.png " alt="pencil" class="pencil">
+            <img src="icons/erase.png " alt="eraser" class="eraser">
+            <img src="icons/download.png " alt="download" class="download">
+            <img src="icons/photo.png " alt="upload" class="upload">
+            <img src="icons/post-it.png " alt="notes" class="notes">
+            <img src="icons/undo.png " alt="undo" class="undo">
+            <img src="icons/forward.png " alt="forward" class="redo">
+            
+        </div>
+
+        <div class="pencil-tool-cont">
+            <div class="pencil-width-cont">
+                <input type="range" class = "pencil-range-cont" min = "2" max = "10" value = "3" >
+            </div>
+            <div class="pencil-color-cont">
+                <div class="pencil-color black"></div>
+                <div class="pencil-color blue"></div>
+                <div class="pencil-color green"></div>
+            </div>
+        </div>
+        
+
+        <div class="eraser-tool-cont">
+            <input type="range" min = "2" max = "16" value = "4" class = "eraser-range-cont">
+        </div>
+
+        <!-- <div class="notes-cont">
+            <div class="header">
+
+                <div class="minimize">
+                </div>
+
+                <div class="remove">
+                </div>
+            </div>
+
+            <div class="footer">
+                <textarea ></textarea>
+            </div>
+        </div> -->
+
+        <canvas class = "canvas" > </canvas>
+
+        <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+        <script>
+            let socket = io.connect("http://localhost:50000");
+        </script>
+        <script src="javascript/tool.js" async defer></script>
+        <script src = "javascript/canvas.js" async defer></script>
+    </body>
+</html>
