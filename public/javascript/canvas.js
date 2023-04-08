@@ -29,6 +29,8 @@ let currentWidth = penWidth;
 tool.strokeStyle = currentColor ;
 tool.lineWidth = currentWidth;
 
+let socket=io();
+
 
 canvas.addEventListener("mousedown", (e) =>{
     mouseDownStatus = true;
